@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Simple-GraphQL 是什么？]]></title>
+    <url>%2F2017%2F06%2F15%2Fgraphql%2FSimple-GraphQL%2F</url>
+    <content type="text"><![CDATA[概念 GraphQL 由Fackbook 推出的一种查询语言。通过在服务器端建立一套Type System，前端可以把自己的查询需求合并成一条查询语句，一次请求即可获取所需的数据。 Sequelize 是 nodejs的 ORM 框架，支持 PostgreSQL、Mysql、SQLite、MSSQL。 Simple-GraphQL 是什么？Simple-GraphQL 是在一个nodejs的框架，可生成基于关系数据库（PostgreSQL, MySQL, SQLite 和 MSSQL）的 GraphQL 接口。 Simple-GraphQL 解决了什么问题？统一的对象模型 基于Sequelize构建的是数据库的对象模型 基于GraphQL构建的是 API 的对象模型 两个模型属性之间有大量的重合，如果各自定义，在开发和修改的过程中很容易造成模型间的不一致。 Simple-GraphQL 提供一套定义对象模型的规范。基于该规范的对象模型，可以在运行时生成对应的Sequelize和GraphQL对象模型。 Simple-GraphQL 对象模型中的概念 概念 在GraphQL中对应 在Sequelize中对应 model 一种Node类型 数据库的一个表 field Node类型的一个属性 数据表的一个字段 link Node类型的一个属性 — query Query — mutation Mutation — instance method — 表Model的实例对象的方法 static method — 表Model的静态方法 简化GraphQL的定义[To be continue…]]]></content>
+      <tags>
+        <tag>GraphQL</tag>
+        <tag>Sequelize</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[收藏夹]]></title>
+    <url>%2F2017%2F06%2F08%2F%E6%94%B6%E8%97%8F%E5%A4%B9%2F</url>
+    <content type="text"><![CDATA[网站掘金 设计从达标到卓越 —— API 设计之道]]></content>
+  </entry>
+</search>
