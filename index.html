@@ -337,7 +337,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/15/graphql/Simple-GraphQL/" itemprop="url">Simple-GraphQL 是什么？</a></h1>
+                <a class="post-title-link" href="/2017/06/15/graphql/Simple-GraphQL/" itemprop="url">Simple-GraphQL 简介</a></h1>
         
 
         <div class="post-meta">
@@ -390,60 +390,37 @@
 <p><a href="https://github.com/graphql/graphql-js" target="_blank" rel="external">GraphQL</a> 由Fackbook 推出的一种查询语言。通过在服务器端建立一套Type System，前端可以把自己的查询需求合并成一条查询语句，一次请求即可获取所需的数据。</p>
 <p><a href="http://docs.sequelizejs.com/" target="_blank" rel="external">Sequelize</a> 是 nodejs的 ORM 框架，支持 <code>PostgreSQL</code>、<code>Mysql</code>、<code>SQLite</code>、<code>MSSQL</code>。 </p>
 </blockquote>
-<h2 id="Simple-GraphQL-是什么？"><a href="#Simple-GraphQL-是什么？" class="headerlink" title="Simple-GraphQL 是什么？"></a>Simple-GraphQL 是什么？</h2><p><a href="https://github.com/logerzhu/simple-graphql" target="_blank" rel="external">Simple-GraphQL</a> 是在一个nodejs的框架，可生成基于关系数据库（<code>PostgreSQL</code>, <code>MySQL</code>, <code>SQLite</code> 和 <code>MSSQL</code>）的 <a href="https://github.com/graphql/graphql-js" target="_blank" rel="external">GraphQL</a> 接口。</p>
+<h2 id="Simple-GraphQL-是什么？"><a href="#Simple-GraphQL-是什么？" class="headerlink" title="Simple-GraphQL 是什么？"></a>Simple-GraphQL 是什么？</h2><p><a href="https://github.com/logerzhu/simple-graphql" target="_blank" rel="external">Simple-GraphQL</a> 是在一个声明式的nodejs框架，可生成基于关系数据库（<code>PostgreSQL</code>, <code>MySQL</code>, <code>SQLite</code> 和 <code>MSSQL</code>）的 <a href="https://github.com/graphql/graphql-js" target="_blank" rel="external">GraphQL</a> 接口，并兼容<a href="https://facebook.github.io/relay/" target="_blank" rel="external">Relay</a>规范。</p>
 <h2 id="Simple-GraphQL-解决了什么问题？"><a href="#Simple-GraphQL-解决了什么问题？" class="headerlink" title="Simple-GraphQL 解决了什么问题？"></a>Simple-GraphQL 解决了什么问题？</h2><h3 id="统一的对象模型"><a href="#统一的对象模型" class="headerlink" title="统一的对象模型"></a>统一的对象模型</h3><ul>
 <li>基于<code>Sequelize</code>构建的是数据库的对象模型</li>
 <li>基于<code>GraphQL</code>构建的是 API 的对象模型</li>
 </ul>
 <p>两个模型属性之间有大量的重合，如果各自定义，在开发和修改的过程中很容易造成模型间的不一致。</p>
 <p><code>Simple-GraphQL</code> 提供一套定义对象模型的规范。基于该规范的对象模型，可以在运行时生成对应的<code>Sequelize</code>和<code>GraphQL</code>对象模型。</p>
-<h4 id="Simple-GraphQL-对象模型中的概念"><a href="#Simple-GraphQL-对象模型中的概念" class="headerlink" title="Simple-GraphQL 对象模型中的概念"></a>Simple-GraphQL 对象模型中的概念</h4><table>
-<thead>
-<tr>
-<th style="text-align:center">概念</th>
-<th>在<code>GraphQL</code>中对应</th>
-<th>在<code>Sequelize</code>中对应</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>model</code></td>
-<td>一种Node类型</td>
-<td>数据库的一个表</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>field</code></td>
-<td>Node类型的一个属性</td>
-<td>数据表的一个字段</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>link</code></td>
-<td>Node类型的一个属性</td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>query</code></td>
-<td>Query</td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>mutation</code></td>
-<td>Mutation</td>
-<td>—</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>instance method</code></td>
-<td>—</td>
-<td>表Model的实例对象的方法</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>static method</code></td>
-<td>—</td>
-<td>表Model的静态方法</td>
-</tr>
-</tbody>
-</table>
-<h3 id="简化GraphQL的定义"><a href="#简化GraphQL的定义" class="headerlink" title="简化GraphQL的定义"></a>简化GraphQL的定义</h3><p>[To be continue…]</p>
+<h4 id="Simple-GraphQL-对象模型中的主要概念"><a href="#Simple-GraphQL-对象模型中的主要概念" class="headerlink" title="Simple-GraphQL 对象模型中的主要概念"></a>Simple-GraphQL 对象模型中的主要概念</h4><img src="http://www.plantuml.com/plantuml/svg/oyjFILLG2ixCBSX9rNKlIYp82FHHy0KAvYWfL7CfA4IdPQRcfCI2M3cPUTbWHc5fQb4bc9LRMf9OafcV1-Oa5XVd9sSY-9bvnIM9UScf2hcf9Hdv43EAGUgJuIArN5mGOnLqTUqKeb7iZxKAgIn8LG3RpmMr4wkoG92KWcE09nV2FLWL-a9b8MeX7YDeCRAl22b6DJGu5UZedCogL9ZAPrCtFEjTzsBXYYSxrZwVrVAqOpeNHY3XqFfqtRmd-xgVJTlvRFDKBhHGnA7bvToPpneQOLemlO6X0UYmbzEtF6tT_A9n2XS0">
+<p>基于统一的对象模型，Simple-GraphQL 在生成GraphQL Schema时，能自动生成对应的关联代码。</p>
+<h3 id="内置的GraphQL-CRUD-操作"><a href="#内置的GraphQL-CRUD-操作" class="headerlink" title="内置的GraphQL CRUD 操作"></a>内置的GraphQL CRUD 操作</h3><p>Simple-GraphQL 可根据对象模型的定义，通过配置可自动生成以下 GraphQL 接口。</p>
+<ol>
+<li>单个对象查询：通过Id或唯一键查询</li>
+<li>对象集合查询：通过对象中的属性的精确值或关键字，搜索满足条件的对象集合。该接口满足<code>Relay</code>规范。</li>
+<li>创建单个对象：提交对象属性值，创建对象并保存到数据库。</li>
+<li>更新单个对象：提交对象Id和要修改的属性值，更新数据库中的对应的记录。</li>
+<li>删除单个对象：提交对象Id，删除数据库中对应的记录。</li>
+</ol>
+<h2 id="Simple-GraphQL-怎样使用？"><a href="#Simple-GraphQL-怎样使用？" class="headerlink" title="Simple-GraphQL 怎样使用？"></a>Simple-GraphQL 怎样使用？</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install graphql graphql-relay simple-graphql --save</div></pre></td></tr></table></figure>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h4 id="定义模型"><a href="#定义模型" class="headerlink" title="定义模型"></a>定义模型</h4><p>以下代码定义一个<code>待办事项</code>的模型。</p>
+<ul>
+<li>每个<code>代办事项</code>（Todo）包含标题（title）、描述（description）、是否完成（completed）、计划完成时间（dueAt）属性。</li>
+<li>通过todos（自动生成的Query）可以通过指定条件搜索特定名字的代表事项，也可以查询所有未完成事项等等。</li>
+<li>通过addTodo（自动生成的Mutation）可以添加新的<code>代办事项</code></li>
+<li>通过updateTodo（自动生成的Mutation）可以修改<code>代办事项</code></li>
+<li>通过deleteTodo（自动生成的Mutation）可以删除<code>代办事项</code></li>
+<li>通过completedTodo（自定义的Mutation）可以标记一个<code>代办事项</code>完成</li>
+</ul>
+<p>Todo.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// @flow</span></div><div class="line"><span class="keyword">import</span> SG <span class="keyword">from</span> <span class="string">'simple-graphql'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> TodoType = SG.modelRef(<span class="string">'Todo'</span>) <span class="comment">// Reference to Todo model type</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> SG.model(<span class="string">'Todo'</span>).fields(&#123;</div><div class="line">  <span class="attr">title</span>: &#123;</div><div class="line">    <span class="attr">$type</span>: <span class="built_in">String</span>,</div><div class="line">    <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">description</span>: <span class="built_in">String</span>,</div><div class="line">  <span class="attr">completed</span>: &#123;</div><div class="line">    <span class="attr">$type</span>: <span class="built_in">Boolean</span>,</div><div class="line">    <span class="attr">default</span>: <span class="literal">false</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">dueAt</span>: <span class="built_in">Date</span></div><div class="line">&#125;).mutations(&#123;</div><div class="line">  <span class="attr">completedTodo</span>: &#123;</div><div class="line">    <span class="attr">description</span>: <span class="string">"标记代办事项完成"</span>,</div><div class="line">    <span class="attr">inputFields</span>: &#123;</div><div class="line">      <span class="attr">todoId</span>: &#123;</div><div class="line">        <span class="attr">$type</span>: TodoType,</div><div class="line">        <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">outputFields</span>: &#123;</div><div class="line">      <span class="attr">changedTodo</span>: TodoType</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">mutateAndGetPayload</span>: <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">&#123;todoId&#125;, context, info, &#123;Todo&#125;</span>) </span>&#123;</div><div class="line">      <span class="keyword">const</span> todo = <span class="keyword">await</span> Todo.findOne(&#123;<span class="attr">where</span>: &#123;<span class="attr">id</span>: todoId&#125;&#125;)</div><div class="line">      <span class="keyword">if</span> (!todo) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"代办事项不存在"</span>)</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (!todo.completed) &#123;</div><div class="line">        todo.completed = <span class="literal">true</span></div><div class="line">        <span class="keyword">await</span> todo.save()</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> &#123;<span class="attr">changedTodo</span>: todo&#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="生成-GraphQL-Schema-并启动服务端"><a href="#生成-GraphQL-Schema-并启动服务端" class="headerlink" title="生成 GraphQL Schema 并启动服务端"></a>生成 GraphQL Schema 并启动服务端</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Sequelize <span class="keyword">from</span> <span class="string">'sequelize'</span></div><div class="line"><span class="keyword">import</span> SG <span class="keyword">from</span> <span class="string">'simple-graphql'</span></div><div class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">'express'</span></div><div class="line"><span class="keyword">import</span> graphqlHTTP <span class="keyword">from</span> <span class="string">'express-graphql'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Todo <span class="keyword">from</span> <span class="string">'./Todo'</span></div><div class="line"></div><div class="line"><span class="comment">// Config the Sequelize database connection.</span></div><div class="line"><span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'test1'</span>, <span class="string">'postgres'</span>, <span class="string">'Password'</span>, &#123;</div><div class="line">  <span class="attr">host</span>: <span class="string">'localhost'</span>,</div><div class="line">  <span class="attr">port</span>: <span class="number">5432</span>,</div><div class="line">  <span class="attr">dialect</span>: <span class="string">'postgres'</span>,</div><div class="line"></div><div class="line">  <span class="attr">pool</span>: &#123;</div><div class="line">    <span class="attr">max</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">min</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">idle</span>: <span class="number">10000</span></div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Generate the GraphQL Schema</span></div><div class="line"><span class="keyword">const</span> schema = GS.build(sequelize, [Todo], &#123;&#125;) </div><div class="line"></div><div class="line"><span class="comment">// After GS.bulid completed, all sequelize models have defined, and call sequelize.sync will automatic create the schema in database.</span></div><div class="line">sequelize.sync(&#123;</div><div class="line">  <span class="attr">force</span>: <span class="literal">false</span>, <span class="comment">// if true, it will drop all existing table and recreate all.</span></div><div class="line">  logging: <span class="built_in">console</span>.log</div><div class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Init DB Done'</span>), (err) =&gt; <span class="built_in">console</span>.log(<span class="string">'Init DB Fail'</span>, err))</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// Start the GraphQL server</span></div><div class="line"><span class="keyword">const</span> app = express()</div><div class="line"></div><div class="line">app.use(<span class="string">'/graphql'</span>, graphqlHTTP(&#123;</div><div class="line"> <span class="attr">schema</span>: schema,</div><div class="line"> <span class="attr">graphiql</span>: <span class="literal">true</span></div><div class="line">&#125;))</div><div class="line">app.listen(<span class="number">4000</span>)</div></pre></td></tr></table></figure>
+<p>[To be continue…]</p>
 
           
         
